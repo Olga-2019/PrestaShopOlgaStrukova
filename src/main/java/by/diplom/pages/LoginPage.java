@@ -1,17 +1,16 @@
-package org.diplom;
+package by.diplom.pages;
 
 import com.codeborne.selenide.SelenideElement;
 
-import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$x;
 import static com.codeborne.selenide.Selenide.open;
 
 public class LoginPage {
 
-    public SelenideElement sign_in_button = $("//a[@class='login']");
-    public SelenideElement sign_out_button = $("//a[@class='logout']");
-    public SelenideElement submit_button = $("//button[@name='SubmitLogin']");
-public SelenideElement emailField = $ ("//input[@name=\"email\"]");
-public SelenideElement passwordField = $ ("//input[@id='passwd']");
+    public SelenideElement sign_in_button = $x("//a[@class='login']");
+    public SelenideElement submit_button = $x("//button[@name='SubmitLogin']");
+    public SelenideElement emailField = $x("//input[@name=\"email\"]");
+    public SelenideElement passwordField = $x("//input[@id='passwd']");
 
 
     public LoginPage openPage(String url) {

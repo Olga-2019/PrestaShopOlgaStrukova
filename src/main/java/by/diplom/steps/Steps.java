@@ -1,13 +1,14 @@
-package steps;
+package by.diplom.steps;
 
+import by.diplom.pages.LoginPage;
+import by.diplom.pages.MyAccountPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import org.diplom.LoginPage;
 
 public class Steps {
     LoginPage loginPage = new LoginPage();
-//    MyAccountPage myAccountPage = new MyAccountPage();
+    MyAccountPage myAccountPage = new MyAccountPage();
 
     @Given("user is on {string} page")
     public void userIsOnPage(String url) {
@@ -34,13 +35,6 @@ public class Steps {
 loginPage.clickOnSubmitButton();
     }
     @Then("My account page is opened")
-    public void myAccountPageIsOpened() {
+    public void myAccountPageIsOpened() {myAccountPage.myAccountPageIsOpened();
     }
-
-    //    @When("User enter password {string}")
-//    public void userEnterPassword(String passwordText) {
-//        LoginPage.userEnterPassword(passwordText);
-//    }
-//
-
 }
