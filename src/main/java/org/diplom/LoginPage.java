@@ -1,30 +1,41 @@
 package org.diplom;
 
-import io.qameta.allure.Step;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import com.codeborne.selenide.SelenideElement;
 
-public class LoginPage extends BasePage {
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
 
-    private final By USER_NAME_INPUT = By.id("email");
-    private final By PASSWORD_INPUT = By.id("passwd");
-    private final By SIGNIN_BUTTON = By.id("SubmitLogin");
-    private final By SIGN_IN_BUTTON = By.xpath("//div[@class='header_user_info']");
+public class LoginPage {
+
+    public SelenideElement sign_in_button = $("//a[@class='login']");
+    public SelenideElement sign_out_button = $("//a[@class='logout']");
+    public SelenideElement submit_button = $("//button[@name='SubmitLogin']");
+public SelenideElement emailField = $ ("//input[@name=\"email\"]");
+public SelenideElement passwordField = $ ("//input[@id='passwd']");
 
 
-    public LoginPage(WebDriver driver) {
-        super(driver);
+    public LoginPage openPage(String url) {
+        open(url);
+        return new LoginPage();
     }
 
-    public void openPage() {
-        driver.get(BASE_URL);
-        driver.findElement(SIGN_IN_BUTTON).click();
+    public LoginPage clickSignInButton() {
+        sign_in_button.click();
+        return new LoginPage();
     }
 
-    public LoginPage login(String user, String password) {
-        driver.findElement(USER_NAME_INPUT).sendKeys(user);
-        driver.findElement(PASSWORD_INPUT).sendKeys(password);
-        driver.findElement(SIGNIN_BUTTON).click();
-        return this;
+    public LoginPage fillInTheEmail(String user) {
+        emailField.sendKeys(user);
+        return new LoginPage();
+    }
+
+    public LoginPage fillInThePassword(String password) {
+        passwordField.sendKeys(password);
+        return new LoginPage();
+    }
+
+    public LoginPage clickOnSubmitButton() {
+        submit_button.click();
+        return new LoginPage();
     }
 }

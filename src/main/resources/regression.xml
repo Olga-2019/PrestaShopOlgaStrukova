@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Regression Tests">
-    <test name="LoginTest">
-        <classes>
-            <class name="Tests.LogInTest">
-            </class>
-        </classes>
-    </test>
-</suite>
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">-->
+<!--<suite name="Regression Tests">-->
+<!--    <test name="LoginTest">-->
+<!--        <classes>-->
+<!--            <class name="features.prestaShop">-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--</suite>-->
