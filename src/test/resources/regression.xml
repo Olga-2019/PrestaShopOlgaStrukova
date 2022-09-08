@@ -3,8 +3,7 @@
 <suite name="Regression Tests">
     <test name="LoginTest">
         <classes>
-            <class name="Tests.LogInTest">
-            </class>
+            <class name="utils.RunFeaturesTest"/>
         </classes>
     </test>
 </suite>
