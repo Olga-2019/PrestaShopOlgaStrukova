@@ -6,13 +6,20 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
-public class Steps {
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
+
+public class LoginSteps {
     LoginPage loginPage = new LoginPage();
     MyAccountPage myAccountPage = new MyAccountPage();
 
     @Given("user is on {string} page")
     public void userIsOnPage(String url) {
         loginPage.openPage(url);
+    }
+
+    @And("the browser is maximized")
+    public void theBrowserIsMaximized() {
+        getWebDriver().manage().window().maximize();
     }
 
     @And("click on Sign In button")
